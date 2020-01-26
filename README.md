@@ -6,6 +6,10 @@ Adapted from the openpose project
 Đây là một bộ thư viện hỗ trợ cho bài tập lớn Danca, sử dụng dự án openpose. Cảm ơn tất cả các tác giả của dự án openpose. Đường dẫn github: https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
 ## Để sử dụng thư viện này, thực hiện các hướng dẫn sau:
+Cài đặt cần thiết:
+
+- Cuda 10.1
+
 ```
 git clone https://github.com/vinhphuctadang/danpo.git
 ```
