@@ -21,7 +21,7 @@ Trên Linux, vào ./models/, chạy **getModels.sh**
 
 --- 
 
-- Since model sizes are too large to be stored on github, we needs to download them from internet, from other source
+- Since models' size are too large, we need to download them from internet, from other source
 
 - This is an independent package from Danca project, which takes advantages of openpose projects
 Thanks all contributors of the project: https://github.com/CMU-Perceptual-Computing-Lab/openpose
