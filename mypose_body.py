@@ -30,7 +30,7 @@ def init (params={}): # Should pass **kwarg, hah hah
 			sys.path.append(dir_path + '/openpose/Release');
 			os.environ['PATH'] = os.environ['PATH'] + ';' + dir_path + '/x64;' +  dir_path + '/bin;'
 			import pyopenpose as OPENPOSE_INSTANCE
-
+			print (OPENPOSE_INSTANCE.__file__)
 		else:
 			# Change these variables to point to the correct folder (Release/x64 etc.)
 			sys.path.append('./openpose/Release');
@@ -76,7 +76,6 @@ def savePose (pose, file_name='output.csv'):
 '''
 def poseExtract (wrapper, path): 
 	
-
 	img = cv2.imread (path);
 	datum = getBodySkeleton (wrapper, img)
 
@@ -86,6 +85,9 @@ def poseExtract (wrapper, path):
 	name_only = parts[0]
 	
 	count = 0
+	if datum.poseKeypoints.shape == ():
+		return datum
+		
 	for pose in datum.poseKeypoints:
 		dest_file = '%s/%s_pose%02d.csv' % (dirname, name_only, count);
 		savePose (pose, dest_file);
@@ -99,7 +101,8 @@ def main ():
 
 	wrapper = init ({
 		# 'hand': True,
-		#'render_pose' : 0
+		# 'pose': False,
+		# 'render_pose' : 0
 		})
 
 	# print (str (OPENPOSE_INSTANCE.init_argv))
@@ -110,16 +113,26 @@ def main ():
 
 	# marked = time ()
 
-	datum = poseExtract (wrapper, './samples/sample (8).jpg')
-	cv2.imshow ('Danpo', datum.cvOutputData)
-	cv2.waitKey (0)
+	# datum = poseExtract (wrapper, './samples/sample (4).jpg')
+	# cv2.imshow ('Danpo', datum.cvOutputData)
+	# cv2.waitKey (0)
 
-	# root, dirs, files = next (os.walk ('./samples/'))
+	path = './samples/';
+	root, dirs, files = next (os.walk (path))
+	from time import time
 
-	# for file in files:
+	for file in files:
+		if file.find ('.csv')>-1:
+			continue
+		print ('Pose extraction of', file, end='... ')
+		marked = time ();
+		datum = poseExtract (wrapper, path+'/'+file)
+		# cv2.imshow("OpenPose 1.5.1 - Tutorial Python API", datum.cvOutputData)
+		# cv2.waitKey(0)
+		print ('done, after', time () - marked)
+		# break
 
-	# 	datum = getBodySkeleton (wrapper, cv2.imread ('./samples/'+file))
-	# 	print("Body keypoints: \n" + str(datum.poseKeypoints))
+	#	print("Body keypoints: \n" + str(datum.poseKeypoints))
 	# 	print("Hand keypoints: " + str (datum.handKeypoints))
 	# 	cv2.imshow("OpenPose 1.5.1 - Tutorial Python API", datum.cvOutputData)
 	# 	cv2.waitKey(0)
@@ -136,3 +149,4 @@ if __name__=='__main__':
 # except Exception as e:
 # 	print(e)
 # 	sys.exit(-1)
+

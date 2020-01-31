@@ -6,4 +6,4 @@
 Thanks all contributors of the project: https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
 Updated: 29-1-2020:
-Use pose extraction to generate data and store as csv 
+Use mypose_body to generate data and store as csv 
