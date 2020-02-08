@@ -84,12 +84,16 @@ def poseExtract (wrapper, path):
 	parts = os.path.splitext(filename)
 	name_only = parts[0]
 	
+	POSE_FOLDER = dirname + '/pose'
+	if not os.path.isdir (POSE_FOLDER):
+		os.mkdir (POSE_FOLDER)
+		
 	count = 0
 	if datum.poseKeypoints.shape == ():
 		return datum
 		
 	for pose in datum.poseKeypoints:
-		dest_file = '%s/%s_pose%02d.csv' % (dirname, name_only, count);
+		dest_file = '%s/%s_pose%02d.csv' % (POSE_FOLDER, name_only, count);
 		savePose (pose, dest_file);
 		count += 1
 	return datum
