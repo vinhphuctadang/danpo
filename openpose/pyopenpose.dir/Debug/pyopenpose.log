@@ -1,5 +1,5 @@
 ﻿  openpose_python.cpp
-E:\Python\mypose\include\openpose/flags.hpp(49,1): warning C4245: 'initializing': conversion from 'int' to 'google::uint64', signed/unsigned mismatch
+Z:\dcongtinh On My Mac\openpose\include\openpose/flags.hpp(49,1): warning C4245: 'initializing': conversion from 'int' to 'google::uint64', signed/unsigned mismatch
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xmemory(671,82): warning C4244: 'initializing': conversion from '_Ty' to '_Objty', possible loss of data
           with
           [
@@ -62,23 +62,23 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
           [
               _Iter=__int64 *
           ]
-E:\Python\mypose\python\openpose\openpose_python.cpp(413): message : see reference to function template instantiation 'std::vector<int,std::allocator<int>>::vector<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,void>(_Iter,_Iter,const _Alloc &)' being compiled
+Z:\dcongtinh On My Mac\openpose\python\openpose\openpose_python.cpp(413): message : see reference to function template instantiation 'std::vector<int,std::allocator<int>>::vector<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,void>(_Iter,_Iter,const _Alloc &)' being compiled
           with
           [
               _Ty=pybind11::ssize_t,
               _Iter=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<pybind11::ssize_t>>>,
               _Alloc=std::allocator<int>
           ]
-E:\Python\mypose\python\openpose\openpose_python.cpp(413): message : see reference to function template instantiation 'std::vector<int,std::allocator<int>>::vector<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,void>(_Iter,_Iter,const _Alloc &)' being compiled
+Z:\dcongtinh On My Mac\openpose\python\openpose\openpose_python.cpp(413): message : see reference to function template instantiation 'std::vector<int,std::allocator<int>>::vector<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,void>(_Iter,_Iter,const _Alloc &)' being compiled
           with
           [
               _Ty=pybind11::ssize_t,
               _Iter=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<pybind11::ssize_t>>>,
               _Alloc=std::allocator<int>
           ]
-E:\Python\mypose\python\openpose\openpose_python.cpp(397): message : see reference to class template instantiation 'pybind11::detail::descr<13>' being compiled
-E:\Python\mypose\3rdparty\pybind11\include\pybind11\cast.h(1556): message : see reference to class template instantiation 'pybind11::detail::descr<8>' being compiled
-E:\Python\mypose\3rdparty\pybind11\include\pybind11\cast.h(1554): message : see reference to class template instantiation 'pybind11::detail::descr<5>' being compiled
-E:\Python\mypose\3rdparty\pybind11\include\pybind11\cast.h(1109): message : see reference to class template instantiation 'pybind11::detail::descr<7>' being compiled
-     Creating library E:/Python/mypose/python/openpose/Debug/pyopenpose.lib and object E:/Python/mypose/python/openpose/Debug/pyopenpose.exp
-  pyopenpose.vcxproj -> E:\Python\mypose\python\openpose\Debug\pyopenpose.cp36-win_amd64.pyd
+Z:\dcongtinh On My Mac\openpose\python\openpose\openpose_python.cpp(397): message : see reference to class template instantiation 'pybind11::detail::descr<13>' being compiled
+Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include\pybind11\cast.h(1556): message : see reference to class template instantiation 'pybind11::detail::descr<8>' being compiled
+Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include\pybind11\cast.h(1554): message : see reference to class template instantiation 'pybind11::detail::descr<5>' being compiled
+Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include\pybind11\cast.h(1109): message : see reference to class template instantiation 'pybind11::detail::descr<7>' being compiled
+     Creating library Z:/dcongtinh On My Mac/openpose/python/openpose/Debug/pyopenpose.lib and object Z:/dcongtinh On My Mac/openpose/python/openpose/Debug/pyopenpose.exp
+  pyopenpose.vcxproj -> Z:\dcongtinh On My Mac\openpose\python\openpose\Debug\pyopenpose.cp36-win_amd64.pyd

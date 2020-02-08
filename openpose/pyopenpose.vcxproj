@@ -14,7 +14,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ADC98B5A-9AB1-31AB-8DCE-F63645844FB6}</ProjectGuid>
+    <ProjectGuid>{211975FE-75CA-38DF-9E85-CACECFFA681E}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Python\mypose\python\openpose\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Z:\dcongtinh On My Mac\openpose\python\openpose\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pyopenpose.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pyopenpose.cp36-win_amd64</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pyd</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Python\mypose\python\openpose\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Z:\dcongtinh On My Mac\openpose\python\openpose\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pyopenpose.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pyopenpose.cp36-win_amd64</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.pyd</TargetExt>
@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>E:\Python\mypose\include;E:\Python\mypose\3rdparty\windows\opencv\include;E:\Python\mypose\3rdparty\windows\caffe\include;E:\Python\mypose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include;E:\Python\mypose\3rdparty\windows\caffe3rdparty\include;E:\Python\mypose\3rdparty\pybind11\include;C:\ProgramData\Miniconda3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Z:\dcongtinh On My Mac\openpose\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\opencv\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include2;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe3rdparty\include;Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -73,15 +73,15 @@
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <PreprocessorDefinitions>NDEBUG;USE_CAFFE;USE_CUDA;CMAKE_INTDIR="Release";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;USE_CAFFE;USE_CPU_ONLY;CPU_ONLY;CMAKE_INTDIR="Release";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;USE_CAFFE;USE_CUDA;CMAKE_INTDIR=\"Release\";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\Python\mypose\include;E:\Python\mypose\3rdparty\windows\opencv\include;E:\Python\mypose\3rdparty\windows\caffe\include;E:\Python\mypose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include;E:\Python\mypose\3rdparty\windows\caffe3rdparty\include;E:\Python\mypose\3rdparty\pybind11\include;C:\ProgramData\Miniconda3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;USE_CAFFE;USE_CPU_ONLY;CPU_ONLY;CMAKE_INTDIR=\"Release\";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Z:\dcongtinh On My Mac\openpose\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\opencv\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include2;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe3rdparty\include;Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\Python\mypose\include;E:\Python\mypose\3rdparty\windows\opencv\include;E:\Python\mypose\3rdparty\windows\caffe\include;E:\Python\mypose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include;E:\Python\mypose\3rdparty\windows\caffe3rdparty\include;E:\Python\mypose\3rdparty\pybind11\include;C:\ProgramData\Miniconda3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Z:\dcongtinh On My Mac\openpose\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\opencv\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include2;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe3rdparty\include;Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,13 +89,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>C:\ProgramData\Miniconda3\libs\Python36.lib;-LTCG;..\..\src\openpose\Release\openpose.lib;..\..\3rdparty\windows\opencv\x64\vc15\lib\opencv_world411.lib;..\..\3rdparty\windows\caffe3rdparty\lib\gflags.lib;..\..\3rdparty\windows\caffe3rdparty\lib\glog.lib;..\..\3rdparty\windows\caffe\lib\caffe.lib;..\..\3rdparty\windows\caffe\lib\caffeproto.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_system-vc141-mt-x64-1_69.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_filesystem-vc141-mt-x64-1_69.lib;C:\ProgramData\Miniconda3\libs\Python36.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\lib\x64\cudart_static.lib;..\..\3rdparty\windows\opencv\x64\vc15\lib\opencv_world411.lib;..\..\3rdparty\windows\caffe3rdparty\lib\gflags.lib;..\..\3rdparty\windows\caffe3rdparty\lib\glog.lib;..\..\3rdparty\windows\caffe\lib\caffe.lib;..\..\3rdparty\windows\caffe\lib\caffeproto.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_system-vc141-mt-x64-1_69.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_filesystem-vc141-mt-x64-1_69.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\libs\Python36.lib;-LTCG;..\..\src\openpose\Release\openpose.lib;..\..\3rdparty\windows\opencv\x64\vc15\lib\opencv_world411.lib;..\..\3rdparty\windows\caffe3rdparty\lib\gflags.lib;..\..\3rdparty\windows\caffe3rdparty\lib\glog.lib;..\..\3rdparty\windows\caffe_cpu\lib\caffe.lib;..\..\3rdparty\windows\caffe_cpu\lib\caffeproto.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_system-vc141-mt-x64-1_69.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_filesystem-vc141-mt-x64-1_69.lib;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\libs\Python36.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/Python/mypose/python/openpose/Release/pyopenpose.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/Python/mypose/python/openpose/Release/pyopenpose.pdb</ProgramDataBaseFile>
+      <ImportLibrary>Z:/dcongtinh On My Mac/openpose/python/openpose/Release/pyopenpose.lib</ImportLibrary>
+      <ProgramDataBaseFile>Z:/dcongtinh On My Mac/openpose/python/openpose/Release/pyopenpose.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -104,7 +104,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>E:\Python\mypose\include;E:\Python\mypose\3rdparty\windows\opencv\include;E:\Python\mypose\3rdparty\windows\caffe\include;E:\Python\mypose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include;E:\Python\mypose\3rdparty\windows\caffe3rdparty\include;E:\Python\mypose\3rdparty\pybind11\include;C:\ProgramData\Miniconda3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Z:\dcongtinh On My Mac\openpose\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\opencv\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include2;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe3rdparty\include;Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -118,15 +118,15 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>USE_CAFFE;USE_CUDA;CMAKE_INTDIR="Debug";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_CAFFE;USE_CPU_ONLY;CPU_ONLY;CMAKE_INTDIR="Debug";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;USE_CAFFE;USE_CUDA;CMAKE_INTDIR=\"Debug\";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\Python\mypose\include;E:\Python\mypose\3rdparty\windows\opencv\include;E:\Python\mypose\3rdparty\windows\caffe\include;E:\Python\mypose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include;E:\Python\mypose\3rdparty\windows\caffe3rdparty\include;E:\Python\mypose\3rdparty\pybind11\include;C:\ProgramData\Miniconda3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;USE_CAFFE;USE_CPU_ONLY;CPU_ONLY;CMAKE_INTDIR=\"Debug\";pyopenpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Z:\dcongtinh On My Mac\openpose\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\opencv\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include2;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe3rdparty\include;Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\Python\mypose\include;E:\Python\mypose\3rdparty\windows\opencv\include;E:\Python\mypose\3rdparty\windows\caffe\include;E:\Python\mypose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include;E:\Python\mypose\3rdparty\windows\caffe3rdparty\include;E:\Python\mypose\3rdparty\pybind11\include;C:\ProgramData\Miniconda3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Z:\dcongtinh On My Mac\openpose\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\opencv\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe_cpu\include2;Z:\dcongtinh On My Mac\openpose\3rdparty\windows\caffe3rdparty\include;Z:\dcongtinh On My Mac\openpose\3rdparty\pybind11\include;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -134,13 +134,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>C:\ProgramData\Miniconda3\libs\Python36.lib;..\..\src\openpose\Debug\openposed.lib;..\..\3rdparty\windows\opencv\x64\vc15\lib\opencv_world411.lib;..\..\3rdparty\windows\caffe3rdparty\lib\gflagsd.lib;..\..\3rdparty\windows\caffe3rdparty\lib\glogd.lib;..\..\3rdparty\windows\caffe\lib\caffe.lib;..\..\3rdparty\windows\caffe\lib\caffeproto.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_system-vc141-mt-x64-1_69.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_filesystem-vc141-mt-x64-1_69.lib;C:\ProgramData\Miniconda3\libs\Python36.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\lib\x64\cudart_static.lib;..\..\3rdparty\windows\opencv\x64\vc15\lib\opencv_world411.lib;..\..\3rdparty\windows\caffe3rdparty\lib\gflagsd.lib;..\..\3rdparty\windows\caffe3rdparty\lib\glogd.lib;..\..\3rdparty\windows\caffe\lib\caffe.lib;..\..\3rdparty\windows\caffe\lib\caffeproto.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_system-vc141-mt-x64-1_69.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_filesystem-vc141-mt-x64-1_69.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\libs\Python36.lib;..\..\src\openpose\Debug\openposed.lib;..\..\3rdparty\windows\opencv\x64\vc15\lib\opencv_world411.lib;..\..\3rdparty\windows\caffe3rdparty\lib\gflagsd.lib;..\..\3rdparty\windows\caffe3rdparty\lib\glogd.lib;..\..\3rdparty\windows\caffe_cpu\lib\caffe.lib;..\..\3rdparty\windows\caffe_cpu\lib\caffeproto.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_system-vc141-mt-x64-1_69.lib;..\..\3rdparty\windows\caffe3rdparty\lib\boost_filesystem-vc141-mt-x64-1_69.lib;C:\Users\Tinh Dao\AppData\Local\Programs\Python\Python36\libs\Python36.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/Python/mypose/python/openpose/Debug/pyopenpose.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/Python/mypose/python/openpose/Debug/pyopenpose.pdb</ProgramDataBaseFile>
+      <ImportLibrary>Z:/dcongtinh On My Mac/openpose/python/openpose/Debug/pyopenpose.lib</ImportLibrary>
+      <ProgramDataBaseFile>Z:/dcongtinh On My Mac/openpose/python/openpose/Debug/pyopenpose.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -148,11 +148,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="E:\Python\mypose\python\openpose\openpose_python.cpp" />
+    <ClCompile Include="Z:\dcongtinh On My Mac\openpose\python\openpose\openpose_python.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="E:\Python\mypose\src\openpose\openpose.vcxproj">
-      <Project>{316F3627-0E2F-358C-8BF8-06B110DE687A}</Project>
+    <ProjectReference Include="Z:\dcongtinh On My Mac\openpose\src\openpose\openpose.vcxproj">
+      <Project>{5A38C954-9764-3F2C-8423-5C841C29FD4E}</Project>
       <Name>openpose</Name>
     </ProjectReference>
   </ItemGroup>

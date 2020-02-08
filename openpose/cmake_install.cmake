@@ -1,4 +1,4 @@
-# Install script for directory: E:/Python/mypose/python/openpose
+# Install script for directory: Z:/dcongtinh On My Mac/openpose/python/openpose
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,17 +34,17 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python" TYPE MODULE FILES "E:/Python/mypose/python/openpose/Release/pyopenpose.cp36-win_amd64.pyd")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python" TYPE MODULE FILES "Z:/dcongtinh On My Mac/openpose/python/openpose/Release/pyopenpose.cp36-win_amd64.pyd")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python" TYPE MODULE FILES "E:/Python/mypose/python/openpose/Debug/pyopenpose.cp36-win_amd64.pyd")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python" TYPE MODULE FILES "Z:/dcongtinh On My Mac/openpose/python/openpose/Debug/pyopenpose.cp36-win_amd64.pyd")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python/openpose" TYPE DIRECTORY FILES "E:/Python/mypose/python/openpose/" FILES_MATCHING REGEX "/[^/]*\\.so$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python/openpose" TYPE DIRECTORY FILES "Z:/dcongtinh On My Mac/openpose/python/openpose/" FILES_MATCHING REGEX "/[^/]*\\.so$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python/openpose" TYPE DIRECTORY FILES "E:/Python/mypose/python/openpose/" FILES_MATCHING REGEX "/[^/]*\\.py$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/python/openpose" TYPE DIRECTORY FILES "Z:/dcongtinh On My Mac/openpose/python/openpose/" FILES_MATCHING REGEX "/[^/]*\\.py$")
 endif()
 

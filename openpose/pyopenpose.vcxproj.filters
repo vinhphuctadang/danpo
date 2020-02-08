@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\Python\mypose\python\openpose\openpose_python.cpp">
+    <ClCompile Include="Z:\dcongtinh On My Mac\openpose\python\openpose\openpose_python.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{DF553CFA-DAA7-30C7-BB7A-ECD0B6358A87}</UniqueIdentifier>
+      <UniqueIdentifier>{2CC181E2-A958-3746-8BF3-EF50242C4D93}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

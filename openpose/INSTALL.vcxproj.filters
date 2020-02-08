@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="E:\Python\mypose\CMakeFiles\40cb70a34866b8253fa7502777c5ac49\INSTALL_force.rule">
+    <CustomBuild Include="Z:\dcongtinh On My Mac\openpose\CMakeFiles\941daa931883a5d7c8676392efd920f1\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{BD17BB35-0B10-336D-98E9-B81E7206611D}</UniqueIdentifier>
+      <UniqueIdentifier>{A3B27717-3E39-3A50-8433-4ADEECBD47EB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

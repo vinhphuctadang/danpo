@@ -33,9 +33,10 @@ def init (params={}): # Should pass **kwarg, hah hah
 
 		else:
 			# Change these variables to point to the correct folder (Release/x64 etc.)
-			sys.path.append('/openpose/Release');
+			# sys.path.append('./openpose/Release');
+			# print (sys.path)
 			# If you run `make install` (default path is `/usr/local/python` for Ubuntu), you can also access the OpenPose/python module from there. This will install OpenPose and the python library at your desired installation path. Ensure that this is in your python path in order to use it.
-			# sys.path.append('/usr/local/python')
+			sys.path.append('/usr/local/python')
 			import pyopenpose as OPENPOSE_INSTANCE
 	'''
 		END SCOPE
@@ -110,7 +111,7 @@ def main ():
 
 	# marked = time ()
 
-	datum = poseExtract (wrapper, './samples/sample (8).jpg')
+	datum = poseExtract (wrapper, './samples/sample1.png')
 	cv2.imshow ('Danpo', datum.cvOutputData)
 	cv2.waitKey (0)
 
