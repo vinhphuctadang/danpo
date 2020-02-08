@@ -5,6 +5,10 @@ import cv2
 import os
 from sys import platform
 import argparse
+import json
+# from json import encoder
+# encoder.FLOAT_REPR = lambda o: format(o, '.2f')
+
 OPENPOSE_INSTANCE = None
 
 def init (params={}): # Should pass **kwarg, hah hah
@@ -54,16 +58,16 @@ def getBodySkeleton (opWrapper, imageToProcess):
 	opWrapper.emplaceAndPop([datum])
 	return datum
 
-def savePose (pose, file_name='output.csv'):
-	f = open (file_name, 'w');
-	for pnt in pose:
-		_l_ = len (pnt)
-		for v in range (_l_):
-			f.write (str (pnt[v]))
-			if (v < _l_ - 1):
-				f.write (',')
-		f.write ('\n')
-	f.close ()
+# def savePose (pose, file_name='output.csv'):
+# 	f = open (file_name, 'w');
+# 	for pnt in pose:
+# 		_l_ = len (pnt)
+# 		for v in range (_l_):
+# 			f.write (str (pnt[v]))
+# 			if (v < _l_ - 1):
+# 				f.write (',')
+# 		f.write ('\n')
+# 	f.close ()
 
 
 '''
@@ -74,9 +78,22 @@ def savePose (pose, file_name='output.csv'):
 	3. Find desired file to store poses
 		the poses will be stored as csv into the file named <file_original_name>_pose<pose_number>.csv
 '''
+
+def toList (poses):
+	result = []
+	for eachPose in poses:
+		pose = []
+		for eachPoint in eachPose:
+			# print (list (eachPoint))
+			dim = [round (float (x), 3) for x in eachPoint]
+			pose.append (dim)
+
+		result.append (pose)
+	return result
+
 def poseExtract (wrapper, path): 
 	
-	img = cv2.imread (path);
+	img = cv2.imread (path)
 	datum = getBodySkeleton (wrapper, img)
 
 	dirname = os.path.dirname (path)
@@ -88,14 +105,20 @@ def poseExtract (wrapper, path):
 	if not os.path.isdir (POSE_FOLDER):
 		os.mkdir (POSE_FOLDER)
 		
-	count = 0
+	# count = 0
 	if datum.poseKeypoints.shape == ():
 		return datum
 		
-	for pose in datum.poseKeypoints:
-		dest_file = '%s/%s_pose%02d.csv' % (POSE_FOLDER, name_only, count);
-		savePose (pose, dest_file);
-		count += 1
+	dest_file = '%s/%s.json' % (POSE_FOLDER, name_only)
+
+	_ = {
+		'size' : tuple(img.shape[1::-1]),
+		'pose' : toList (datum.poseKeypoints) 
+	}
+	with open (dest_file, 'w') as f:
+		jstr = json.dumps (_, indent=3)
+		f.write (jstr)
+	
 	return datum
 '''
 	main () is just a test function 
@@ -106,7 +129,7 @@ def main ():
 	wrapper = init ({
 		# 'hand': True,
 		# 'pose': False,
-		# 'render_pose' : 0
+		'render_pose' : 0
 		})
 
 	# print (str (OPENPOSE_INSTANCE.init_argv))
@@ -129,7 +152,7 @@ def main ():
 		if file.find ('.csv')>-1:
 			continue
 		print ('Pose extraction of', file, end='... ')
-		marked = time ();
+		marked = time ()
 		datum = poseExtract (wrapper, path+'/'+file)
 		# cv2.imshow("OpenPose 1.5.1 - Tutorial Python API", datum.cvOutputData)
 		# cv2.waitKey(0)
