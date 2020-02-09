@@ -8,9 +8,15 @@ import argparse
 import json
 # from json import encoder
 # encoder.FLOAT_REPR = lambda o: format(o, '.2f')
+dir_path = os.path.dirname(os.path.realpath(__file__))
+# Giả sử %OPENPOSE% là đường dẫn, dẫn đến thư mục OPENPOSE đã được dựng. VD: D:\build\OPENPOSE\
+OPENPOSE_INSTANCE   = None
+OPENPOSE_MODELS 	= dir_path + "/models/" #Đổi thành đường dẫn đến các models của OPENPOSE
+OPENPOSE_RELEASE_PY = dir_path + '/openpose/Release' # Đổi thành đường dẫn, đẫn đến %OPENPOSE%/Release
+OPENPOSE_x64 	    = dir_path + '/x64';
+OPENPOSE_BIN		= dir_path + '/bin';
 
-OPENPOSE_INSTANCE = None
-
+# init () là code của openpose_python_api_example, mình dựa vào để phát triển
 def init (params={}): # Should pass **kwarg, hah hah
 	global OPENPOSE_INSTANCE
 
@@ -19,25 +25,26 @@ def init (params={}): # Should pass **kwarg, hah hah
 		# try:
 		# Import Openpose (Windows/Ubuntu/OSX)
 		if not "model_folder" in params:
-			dir_path = os.path.dirname(os.path.realpath(__file__))
-			params["model_folder"] = dir_path + "/models/"
+			
+			params["model_folder"] = OPENPOSE_MODELS
 		'''
+			Mấy dòng này của mình, chém gió tiếng anh vậy thôi, m.n. thông cảm
 			START SCOPE
-			The following lines of code are adapted from openpose python example
-			See project's details at: https://github.com/CMU-Perceptual-Computing-Lab/openpose/
+			The following lines of code are adapted from openpose python api example
+			See details of the project at: https://github.com/CMU-Perceptual-Computing-Lab/openpose/
 		'''
 		# Windows Import
 		if platform == "win32":
 			# Change these variables to point to the correct folder (Release/x64 etc.)
 			# sys.path.append(dir_path + '/../../python/openpose/Release');
-			print (dir_path)
-			sys.path.append(dir_path + '/openpose/Release');
-			os.environ['PATH'] = os.environ['PATH'] + ';' + dir_path + '/x64;' +  dir_path + '/bin;'
+			# print (dir_path)
+			sys.path.append(OPENPOSE_RELEASE_PY);
+			os.environ['PATH'] = os.environ['PATH'] + ';' + OPENPOSE_x64 +  ';' + OPENPOSE_BIN + ';'
 			import pyopenpose as OPENPOSE_INSTANCE
-			print (OPENPOSE_INSTANCE.__file__)
+			# print (OPENPOSE_INSTANCE.__file__)
 		else:
 			# Change these variables to point to the correct folder (Release/x64 etc.)
-			sys.path.append('./openpose/Release');
+			sys.path.append(OPENPOSE_RELEASE_PY);
 			# If you run `make install` (default path is `/usr/local/python` for Ubuntu), you can also access the OpenPose/python module from there. This will install OpenPose and the python library at your desired installation path. Ensure that this is in your python path in order to use it.
 			# sys.path.append('/usr/local/python')
 			import pyopenpose as OPENPOSE_INSTANCE
@@ -69,14 +76,13 @@ def getBodySkeleton (opWrapper, imageToProcess):
 # 		f.write ('\n')
 # 	f.close ()
 
-
 '''
 	pose extract steps:
 	
 	1. Read image
 	2. Extract pose
 	3. Find desired file to store poses
-		the poses will be stored as csv into the file named <file_original_name>_pose<pose_number>.csv
+		the poses will be stored as json into the file named <file_original_name>.json
 '''
 
 def toList (poses):
@@ -116,13 +122,11 @@ def poseExtract (wrapper, path):
 		'pose' : toList (datum.poseKeypoints) 
 	}
 	with open (dest_file, 'w') as f:
-		jstr = json.dumps (_, indent=3)
+		jstr = json.dumps (_, indent=' ')
 		f.write (jstr)
 	
 	return datum
-'''
-	main () is just a test function 
-'''
+
 def main ():
 
 
@@ -132,22 +136,14 @@ def main ():
 		'render_pose' : 0
 		})
 
-	# print (str (OPENPOSE_INSTANCE.init_argv))
-	# print (dir (OPENPOSE_INSTANCE))
-	# print (dir (wrapper))
-	
-	# from time import time
-
-	# marked = time ()
-
-	# datum = poseExtract (wrapper, './samples/sample (4).jpg')
-	# cv2.imshow ('Danpo', datum.cvOutputData)
-	# cv2.waitKey (0)
-
-	path = './samples/';
+	'''
+		'path' là đường dẫn trỏ đến thư mục chứa các khung hình của video (các khung hình được tách ra được nhờ frame_extractor.py trong ~/danca/tools/)
+		mình nên để đường dẫn tuyệt đối cho đỡ nhầm, mặc dù cũng không tốt lắm		
+	'''
+	path = './samples/'; # Sửa chỗ này để dẫn đến các khung hình (frame)
 	root, dirs, files = next (os.walk (path))
 	from time import time
-
+	print ('Start pose detecting in frames ...')
 	for file in files:
 		if file.find ('.csv')>-1:
 			continue
@@ -159,21 +155,5 @@ def main ():
 		print ('done, after', time () - marked)
 		# break
 
-	#	print("Body keypoints: \n" + str(datum.poseKeypoints))
-	# 	print("Hand keypoints: " + str (datum.handKeypoints))
-	# 	cv2.imshow("OpenPose 1.5.1 - Tutorial Python API", datum.cvOutputData)
-	# 	cv2.waitKey(0)
-	# 	break
-
-	# print ('total time consumed:', time () - marked)
-	# print (dir (datum))
-	# print (datum.faceRectangles)
-
-
-
 if __name__=='__main__':
 	main ()
-# except Exception as e:
-# 	print(e)
-# 	sys.exit(-1)
-
