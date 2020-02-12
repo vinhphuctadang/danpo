@@ -1,4 +1,2 @@
-*.dll
-/models/face
-/models/hand
-/models/pose
+/models
+/bin
